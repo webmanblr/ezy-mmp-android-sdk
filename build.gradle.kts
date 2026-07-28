@@ -1,26 +1,11 @@
 plugins {
-    id("com.android.library") version "8.2.0" apply false
-    id("org.jetbrains.kotlin.android") version "1.9.20" apply false
+    id("com.android.library") version "8.2.0"
+    id("org.jetbrains.kotlin.android") version "1.9.20"
     id("maven-publish")
 }
 
-// Subproject build script for standalone Android library or inclusion into root build
-buildscript {
-    repositories {
-        google()
-        mavenCentral()
-    }
-    dependencies {
-        classpath("com.android.tools.build:gradle:8.2.0")
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.20")
-    }
-}
-
-apply(plugin = "com.android.library")
-apply(plugin = "org.jetbrains.kotlin.android")
-apply(plugin = "maven-publish")
-
-configure<com.android.build.gradle.LibraryExtension> {
+android {
+    namespace = "io.ezyurl.mmp"
     compileSdk = 34
 
     defaultConfig {
@@ -51,7 +36,6 @@ configure<com.android.build.gradle.LibraryExtension> {
     publishing {
         singleVariant("release") {
             withSourcesJar()
-            withJavadocJar()
         }
     }
 }
@@ -74,7 +58,7 @@ afterEvaluate {
                 pom {
                     name.set("EzyMMP Android SDK")
                     description.set("A lightweight Android SDK for attributing app installs and tracking events back to EzyURL short links.")
-                    url.set("https://ezyurl.io/")
+                    url.set("https://github.com/webmanblr/ezy-mmp-android-sdk")
                     licenses {
                         license {
                             name.set("MIT License")
