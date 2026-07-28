@@ -22,7 +22,7 @@ dependencyResolutionManagement {
 
 ```kotlin
 dependencies {
-    implementation("com.github.webmanblr:ezy-mmp-android-sdk:1.0.0")
+    implementation("com.github.webmanblr:ezy-mmp-android-sdk:1.0.3")
     // Required for install attribution:
     implementation("com.android.installreferrer:installreferrer:2.2")
 }
