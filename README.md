@@ -55,7 +55,6 @@ class MyApp : Application() {
         super.onCreate()
         
         // Initialize EzyMMP SDK with your API key
-        // Default endpoint is https://ezyurl.io/api/v1/sdk
         EzyMMP.init(
             context = this,
             apiKey = "ezkey_YOUR_API_KEY"
